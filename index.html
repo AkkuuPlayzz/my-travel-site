@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Travel Website</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
@@ -22,29 +23,29 @@
   <!-- Header -->
   <header class="main-header">
     <h1>📍 Places to Explore in the Hills</h1>
-    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and towering snowy peaks — every location has its own charm and story to tell.</p>
+    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and snowy peaks.</p>
   </header>
 
-  <!-- Places Section -->
+  <!-- Card Grid -->
   <section id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
       <h3>Fruit Village</h3>
-      <p>Tucked away in the Himalayan foothills, Fruit Village is surrounded by orchards...</p>
+      <p>Orchards bursting with apples, peaches, and plums...</p>
     </div>
     <div class="card">
       <img src="mountain.jpg" alt="Snowy Mountain" />
       <h3>Snowy Mountain</h3>
-      <p>The snowy mountains stand tall and silent, covered in a white blanket...</p>
+      <p>White-covered mountains standing tall and peaceful...</p>
     </div>
     <div class="card">
       <img src="temple.jpg" alt="Kedarnath Temple" />
       <h3>Kedarnath Temple</h3>
-      <p>Sitting high in the Himalayas, Kedarnath Temple is one of the most sacred shrines...</p>
+      <p>A sacred temple nestled high in the Himalayas...</p>
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery -->
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
@@ -60,14 +61,14 @@
   <!-- Donate Section -->
   <section id="donate" class="donate">
     <h2>💖 Support the Developer</h2>
-    <p>If you'd like to support the developer, scan the QR code below or use one of the quick options:</p>
+    <p>If you'd like to support, scan the QR code or choose an amount:</p>
     <div class="donate-box">
       <img src="donateQR.jpg" alt="Donate QR Code" />
       <div class="donate-buttons">
-        <button>₹10</button>
-        <button>₹50</button>
-        <button>₹100</button>
-        <button>Custom</button>
+        <a href="upi://pay?pa=7302017538@fam&am=10" class="btn">₹10</a>
+        <a href="upi://pay?pa=7302017538@fam&am=50" class="btn">₹50</a>
+        <a href="upi://pay?pa=7302017538@fam&am=100" class="btn">₹100</a>
+        <a href="upi://pay?pa=7302017538@fam" class="btn">Custom</a>
       </div>
     </div>
   </section>
@@ -75,6 +76,8 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
+    <p>Have questions? We’d love to hear from you.</p>
+
     <div class="contact-box">
       <div class="contact-item">
         <span>📱</span>
@@ -89,6 +92,18 @@
         <div><h4>WhatsApp</h4><a href="https://wa.me/917302017538" target="_blank">Message Us</a></div>
       </div>
     </div>
+
+    <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="4" required></textarea>
+      <input type="text" name="_gotcha" style="display:none">
+      <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -96,14 +111,18 @@
     <p>© 2025 Akash Rawat | All rights reserved.</p>
   </footer>
 
-  <button onclick="topFunction()" id="topBtn">&#8679;</button>
+  <!-- Back to Top -->
+  <button onclick="topFunction()" id="topBtn">↑</button>
 
+  <!-- Scripts -->
   <script>
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
 
@@ -115,15 +134,6 @@
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    // ScrollReveal Animations
-    ScrollReveal().reveal('.main-header, .card, .gallery img, .donate, .contact-box', {
-      delay: 200,
-      distance: '50px',
-      origin: 'bottom',
-      duration: 800,
-      interval: 100
-    });
   </script>
 </body>
 </html>
