@@ -49,12 +49,30 @@
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Gallery 1">
-      <img src="gallery2.jpg" alt="Gallery 2">
-      <img src="gallery3.jpg" alt="Gallery 3">
-      <img src="gallery4.jpg" alt="Gallery 4">
-      <img src="gallery5.jpg" alt="Gallery 5">
-      <img src="gallery6.jpg" alt="Gallery 6">
+      <div class="gallery-item">
+        <img src="gallery1.jpg" alt="Sunrise">
+        <div class="caption">Sunrise over the hills</div>
+      </div>
+      <div class="gallery-item">
+        <img src="gallery2.jpg" alt="Lake">
+        <div class="caption">Lake surrounded by mountains</div>
+      </div>
+      <div class="gallery-item">
+        <img src="gallery3.jpg" alt="Forest Trail">
+        <div class="caption">Peaceful forest trail</div>
+      </div>
+      <div class="gallery-item">
+        <img src="gallery4.jpg" alt="Temple">
+        <div class="caption">A temple in the clouds</div>
+      </div>
+      <div class="gallery-item">
+        <img src="gallery5.jpg" alt="Snow">
+        <div class="caption">Snowy mountain top</div>
+      </div>
+      <div class="gallery-item">
+        <img src="gallery6.jpg" alt="Village">
+        <div class="caption">Himalayan village view</div>
+      </div>
     </div>
   </section>
 
@@ -120,7 +138,6 @@
 
   <!-- Scripts -->
   <script>
-    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -128,7 +145,6 @@
       });
     });
 
-    // Back to Top Button
     const topBtn = document.getElementById("topBtn");
     window.onscroll = () => {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -137,42 +153,5 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-<!-- ScrollReveal CDN -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-  ScrollReveal({ reset: true });
-
-  ScrollReveal().reveal('.main-header', {
-    delay: 200,
-    duration: 800,
-    origin: 'top',
-    distance: '50px'
-  });
-
-  ScrollReveal().reveal('.card', {
-    interval: 200,
-    origin: 'bottom',
-    distance: '40px'
-  });
-
-  ScrollReveal().reveal('.gallery-grid img', {
-    interval: 150,
-    scale: 0.9,
-    distance: '20px'
-  });
-
-  ScrollReveal().reveal('.donate', {
-    origin: 'left',
-    distance: '60px',
-    duration: 800
-  });
-
-  ScrollReveal().reveal('.contact, .contact-box, .contact-form', {
-    origin: 'bottom',
-    distance: '50px',
-    duration: 800
-  });
-</script>
-
 </body>
 </html>
