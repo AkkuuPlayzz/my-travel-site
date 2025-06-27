@@ -137,6 +137,42 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+<!-- ScrollReveal CDN -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal({ reset: true });
+
+  ScrollReveal().reveal('.main-header', {
+    delay: 200,
+    duration: 800,
+    origin: 'top',
+    distance: '50px'
+  });
+
+  ScrollReveal().reveal('.card', {
+    interval: 200,
+    origin: 'bottom',
+    distance: '40px'
+  });
+
+  ScrollReveal().reveal('.gallery-grid img', {
+    interval: 150,
+    scale: 0.9,
+    distance: '20px'
+  });
+
+  ScrollReveal().reveal('.donate', {
+    origin: 'left',
+    distance: '60px',
+    duration: 800
+  });
+
+  ScrollReveal().reveal('.contact, .contact-box, .contact-form', {
+    origin: 'bottom',
+    distance: '50px',
+    duration: 800
+  });
+</script>
 
 </body>
 </html>
