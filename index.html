@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <!-- Navbar -->
@@ -18,7 +17,7 @@
     </ul>
   </nav>
 
-  <!-- Top Heading -->
+  <!-- Header -->
   <header class="main-header">
     <h1>📍 Places to Explore in the Hills</h1>
     <p>
@@ -29,7 +28,7 @@
   <!-- Card Grid -->
   <div id="places" class="container">
     <div class="card">
-      <img src="images/fruit.png" alt="Fruit Village" />
+      <img src="fruit.png" alt="Fruit Village" />
       <h3>Fruit Village</h3>
       <p>
         Tucked away in the Himalayan foothills, Fruit Village is surrounded by orchards bursting with apples, peaches, and plums...
@@ -37,7 +36,7 @@
     </div>
 
     <div class="card">
-      <img src="images/mountain.jpg" alt="Snowy Mountain" />
+      <img src="mountain.jpg" alt="Snowy Mountain" />
       <h3>Snowy Mountain</h3>
       <p>
         The snowy mountains stand tall and silent, covered in a white blanket for most of the year...
@@ -45,7 +44,7 @@
     </div>
 
     <div class="card">
-      <img src="images/temple.jpg" alt="Kedarnath Temple" />
+      <img src="temple.jpg" alt="Kedarnath Temple" />
       <h3>Kedarnath Temple</h3>
       <p>
         Sitting high in the Himalayas, Kedarnath Temple is one of the most sacred Hindu shrines...
@@ -53,7 +52,7 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
     <p>Have questions? We’d love to hear from you.</p>
@@ -84,16 +83,22 @@
       </div>
     </div>
 
-    <!-- Contact Form with Labels -->
-    <form class="contact-form">
+    <!-- Contact Form -->
+    <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
       <label for="name">Name</label>
-      <input type="text" id="name" required>
+      <input type="text" name="name" id="name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" required>
+      <input type="email" name="email" id="email" required>
 
       <label for="message">Message</label>
-      <textarea id="message" rows="4" required></textarea>
+      <textarea name="message" id="message" rows="4" required></textarea>
+
+      <!-- Honeypot for bots -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
 
       <button type="submit">Send</button>
     </form>
@@ -104,26 +109,8 @@
     <p>© 2025 Akash Rawat | All rights reserved.</p>
   </footer>
 
+  <!-- Load reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </body>
 </html>
-<form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name" required>
-
-  <label for="email">Email</label>
-  <input type="email" name="email" id="email" required>
-
-  <label for="message">Message</label>
-  <textarea name="message" id="message" rows="4" required></textarea>
-
-  <!-- Honeypot (spam bot trap) -->
-  <input type="text" name="_gotcha" style="display:none">
-
-  <!-- Google reCAPTCHA -->
-  <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-
-  <button type="submit">Send</button>
-</form>
-
-<!-- Load reCAPTCHA script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
