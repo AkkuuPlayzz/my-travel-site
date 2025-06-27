@@ -3,91 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore hidden gems in the Indian hills. From peaceful villages to snowy peaks, discover Uttarakhand's beauty." />
-  <title>Explore Uttarakhand | Hidden Hill Destinations</title>
+  <title>My Travel Website</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
-<!-- Preloader -->
-<div id="preloader">
-  <div class="spinner"></div>
-</div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#places">Places</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#places">Places</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#donate">Donate</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Header -->
+  <header class="main-header">
+    <h1>📍 Places to Explore in the Hills</h1>
+    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
+  </header>
 
-<!-- Header -->
-<header class="main-header">
-  <h1><span id="typed"></span></h1>
-  <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
-</header>
+  <!-- Places Section -->
+  <section id="places" class="container">
+    <div class="card">
+      <img src="fruit.png" alt="Fruit Village" />
+      <h3>Fruit Village</h3>
+      <p>Orchards filled with apples and peaches, hidden in the hills.</p>
+    </div>
+    <div class="card">
+      <img src="mountain.jpg" alt="Snowy Mountain" />
+      <h3>Snowy Mountain</h3>
+      <p>Snow-covered peaks perfect for adventure and peace.</p>
+    </div>
+    <div class="card">
+      <img src="temple.jpg" alt="Kedarnath Temple" />
+      <h3>Kedarnath Temple</h3>
+      <p>A holy place nestled high in the Himalayas.</p>
+    </div>
+  </section>
 
-<!-- Newsletter -->
-<section class="newsletter">
-  <h2>📬 Stay Updated</h2>
-  <form>
-    <input type="email" placeholder="Enter your email" required />
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
+  <!-- Gallery with Lightbox -->
+  <section id="gallery" class="gallery">
+    <h2>📸 Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1" onclick="openLightbox(this.src)">
+      <img src="gallery2.jpg" alt="Gallery Image 2" onclick="openLightbox(this.src)">
+      <img src="gallery3.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+      <img src="gallery4.jpg" alt="Gallery Image 4" onclick="openLightbox(this.src)">
+      <img src="gallery5.jpg" alt="Gallery Image 5" onclick="openLightbox(this.src)">
+      <img src="gallery6.jpg" alt="Gallery Image 6" onclick="openLightbox(this.src)">
+    </div>
+  </section>
 
-<!-- WhatsApp Floating -->
-<a href="https://wa.me/917302017538" class="whatsapp-float" target="_blank">💬</a>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
 
-<!-- Add rest of sections here... (Places, Gallery, Donate, Contact) -->
+  <!-- Donate Section -->
+  <section id="donate" class="donate">
+    <h2>💖 Support the Developer</h2>
+    <p>Scan the QR or tap a button to donate any amount.</p>
+    <div class="donate-box">
+      <img src="donateQR.jpg" alt="Donate QR Code">
+      <div class="donate-buttons">
+        <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR" class="btn">₹10</a>
+        <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR" class="btn">₹50</a>
+        <a href="upi://pay?pa=7302017538@fam&am=100&cu=INR" class="btn">₹100</a>
+        <a href="upi://pay?pa=7302017538@fam" class="btn">Custom</a>
+      </div>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Akash Rawat | All rights reserved.</p>
-</footer>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>📞 Get in Touch</h2>
+    <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
 
-<!-- Back to Top -->
-<button onclick="topFunction()" id="topBtn">↑</button>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
 
-<script>
-  // Preloader
-  window.addEventListener("load", () => {
-    document.getElementById("preloader").style.display = "none";
-  });
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="4" required></textarea>
 
-  // Typed.js
-  new Typed("#typed", {
-    strings: ["Explore the Hills", "Discover Hidden Villages", "Trek the Peaks"],
-    typeSpeed: 60,
-    backSpeed: 30,
-    backDelay: 1500,
-    startDelay: 700,
-    loop: true
-  });
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-  // Smooth Scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Akash Rawat | All rights reserved.</p>
+  </footer>
 
-  // Back to Top Button
-  const topBtn = document.getElementById("topBtn");
-  window.onscroll = () => {
-    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  };
-  function topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+      img.src = src;
+      lightbox.style.display = "flex";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
