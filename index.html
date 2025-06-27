@@ -49,29 +49,29 @@
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="gallery1.jpg" alt="Sunrise">
-        <div class="caption">Sunrise over the hills</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery1.jpg" alt="Gallery 1">
+        <span class="ripple"></span>
       </div>
-      <div class="gallery-item">
-        <img src="gallery2.jpg" alt="Lake">
-        <div class="caption">Lake surrounded by mountains</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery2.jpg" alt="Gallery 2">
+        <span class="ripple"></span>
       </div>
-      <div class="gallery-item">
-        <img src="gallery3.jpg" alt="Forest Trail">
-        <div class="caption">Peaceful forest trail</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery3.jpg" alt="Gallery 3">
+        <span class="ripple"></span>
       </div>
-      <div class="gallery-item">
-        <img src="gallery4.jpg" alt="Temple">
-        <div class="caption">A temple in the clouds</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery4.jpg" alt="Gallery 4">
+        <span class="ripple"></span>
       </div>
-      <div class="gallery-item">
-        <img src="gallery5.jpg" alt="Snow">
-        <div class="caption">Snowy mountain top</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery5.jpg" alt="Gallery 5">
+        <span class="ripple"></span>
       </div>
-      <div class="gallery-item">
-        <img src="gallery6.jpg" alt="Village">
-        <div class="caption">Himalayan village view</div>
+      <div class="gallery-item" onclick="imageClick(this)">
+        <img src="gallery6.jpg" alt="Gallery 6">
+        <span class="ripple"></span>
       </div>
     </div>
   </section>
@@ -138,6 +138,11 @@
 
   <!-- Scripts -->
   <script>
+    function imageClick(el) {
+      el.classList.add("clicked");
+      setTimeout(() => el.classList.remove("clicked"), 300);
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
