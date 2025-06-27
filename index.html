@@ -3,156 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Travel Website</title>
+  <meta name="description" content="Explore hidden gems in the Indian hills. From peaceful villages to snowy peaks, discover Uttarakhand's beauty." />
+  <title>Explore Uttarakhand | Hidden Hill Destinations</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#places">Places</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#donate">Donate</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-  <!-- Header -->
-  <header class="main-header">
-    <h1>📍 Places to Explore in the Hills</h1>
-    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
-  </header>
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#places">Places</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Places Section -->
-  <section id="places" class="container">
-    <div class="card">
-      <img src="fruit.png" alt="Fruit Village" />
-      <h3>Fruit Village</h3>
-      <p>Apple, peach, and plum orchards hidden in the hills...</p>
-    </div>
-    <div class="card">
-      <img src="mountain.jpg" alt="Snowy Mountain" />
-      <h3>Snowy Mountain</h3>
-      <p>Mountains covered in white almost all year round...</p>
-    </div>
-    <div class="card">
-      <img src="temple.jpg" alt="Kedarnath Temple" />
-      <h3>Kedarnath Temple</h3>
-      <p>One of the holiest shrines, nestled high in the Himalayas...</p>
-    </div>
-  </section>
+<!-- Header -->
+<header class="main-header">
+  <h1><span id="typed"></span></h1>
+  <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
+</header>
 
-  <!-- Gallery -->
-  <section id="gallery" class="gallery">
-    <h2>📸 Photo Gallery</h2>
-    <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
-      <img src="gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
-      <img src="gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
-      <img src="gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
-      <img src="gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
-      <img src="gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
-    </div>
-  </section>
+<!-- Newsletter -->
+<section class="newsletter">
+  <h2>📬 Stay Updated</h2>
+  <form>
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close-btn">×</span>
-    <img id="lightbox-img" src="" alt="Full View">
-  </div>
+<!-- WhatsApp Floating -->
+<a href="https://wa.me/917302017538" class="whatsapp-float" target="_blank">💬</a>
 
-  <!-- Donate -->
-  <section id="donate" class="donate">
-    <h2>💖 Support the Developer</h2>
-    <p>If you want to donate, scan the QR or tap an amount:</p>
-    <div class="donate-box">
-      <img src="donateQR.jpg" alt="QR Code">
-      <div class="donate-buttons">
-        <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR" class="btn">₹10</a>
-        <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR" class="btn">₹50</a>
-        <a href="upi://pay?pa=7302017538@fam&am=100&cu=INR" class="btn">₹100</a>
-        <a href="upi://pay?pa=7302017538@fam" class="btn">Custom</a>
-      </div>
-    </div>
-  </section>
+<!-- Add rest of sections here... (Places, Gallery, Donate, Contact) -->
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>📞 Get in Touch</h2>
-    <p>Have questions? Drop us a message!</p>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Akash Rawat | All rights reserved.</p>
+</footer>
 
-    <div class="contact-box">
-      <div class="contact-item">
-        <span>📱</span>
-        <div><h4>Phone</h4><a href="tel:7302017538">+91 7302017538</a></div>
-      </div>
-      <div class="contact-item">
-        <span>✉️</span>
-        <div><h4>Email</h4><a href="mailto:quotesmotivation409@gmail.com">quotesmotivation409@gmail.com</a></div>
-      </div>
-      <div class="contact-item">
-        <span>💬</span>
-        <div><h4>WhatsApp</h4><a href="https://wa.me/917302017538" target="_blank">Message Us</a></div>
-      </div>
-    </div>
+<!-- Back to Top -->
+<button onclick="topFunction()" id="topBtn">↑</button>
 
-    <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
+<script>
+  // Preloader
+  window.addEventListener("load", () => {
+    document.getElementById("preloader").style.display = "none";
+  });
 
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
+  // Typed.js
+  new Typed("#typed", {
+    strings: ["Explore the Hills", "Discover Hidden Villages", "Trek the Peaks"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    backDelay: 1500,
+    startDelay: 700,
+    loop: true
+  });
 
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="4" required></textarea>
-
-      <input type="text" name="_gotcha" style="display:none">
-      <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Akash Rawat | All rights reserved.</p>
-  </footer>
-
-  <!-- Back to Top -->
-  <button onclick="topFunction()" id="topBtn">↑</button>
-
-  <!-- JS -->
-  <script>
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
+  });
 
-    // Back to Top
-    const topBtn = document.getElementById("topBtn");
-    window.onscroll = () => {
-      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-    function topFunction() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Lightbox
-    function openLightbox(img) {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
-    }
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
+  // Back to Top Button
+  const topBtn = document.getElementById("topBtn");
+  window.onscroll = () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+  function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
