@@ -23,25 +23,25 @@
   <!-- Header -->
   <header class="main-header">
     <h1>📍 Places to Explore in the Hills</h1>
-    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and snowy peaks.</p>
+    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
   </header>
 
-  <!-- Card Grid -->
+  <!-- Places -->
   <section id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
       <h3>Fruit Village</h3>
-      <p>Orchards bursting with apples, peaches, and plums...</p>
+      <p>Apple, peach, and plum orchards hidden in the hills...</p>
     </div>
     <div class="card">
       <img src="mountain.jpg" alt="Snowy Mountain" />
       <h3>Snowy Mountain</h3>
-      <p>White-covered mountains standing tall and peaceful...</p>
+      <p>Mountains covered in white almost all year round...</p>
     </div>
     <div class="card">
       <img src="temple.jpg" alt="Kedarnath Temple" />
       <h3>Kedarnath Temple</h3>
-      <p>A sacred temple nestled high in the Himalayas...</p>
+      <p>One of the holiest shrines, nestled high in the Himalayas...</p>
     </div>
   </section>
 
@@ -49,34 +49,34 @@
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Gallery Image 1" />
-      <img src="gallery2.jpg" alt="Gallery Image 2" />
-      <img src="gallery3.jpg" alt="Gallery Image 3" />
-      <img src="gallery4.jpg" alt="Gallery Image 4" />
-      <img src="gallery5.jpg" alt="Gallery Image 5" />
-      <img src="gallery6.jpg" alt="Gallery Image 6" />
+      <img src="gallery1.jpg" alt="Gallery 1">
+      <img src="gallery2.jpg" alt="Gallery 2">
+      <img src="gallery3.jpg" alt="Gallery 3">
+      <img src="gallery4.jpg" alt="Gallery 4">
+      <img src="gallery5.jpg" alt="Gallery 5">
+      <img src="gallery6.jpg" alt="Gallery 6">
     </div>
   </section>
 
-  <!-- Donate Section -->
+  <!-- Donate -->
   <section id="donate" class="donate">
     <h2>💖 Support the Developer</h2>
-    <p>If you'd like to support, scan the QR code or choose an amount:</p>
+    <p>If you want to donate, scan the QR or tap an amount:</p>
     <div class="donate-box">
-      <img src="donateQR.jpg" alt="Donate QR Code" />
+      <img src="donateQR.jpg" alt="QR Code">
       <div class="donate-buttons">
-        <a href="upi://pay?pa=7302017538@fam&am=10" class="btn">₹10</a>
-        <a href="upi://pay?pa=7302017538@fam&am=50" class="btn">₹50</a>
-        <a href="upi://pay?pa=7302017538@fam&am=100" class="btn">₹100</a>
+        <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR" class="btn">₹10</a>
+        <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR" class="btn">₹50</a>
+        <a href="upi://pay?pa=7302017538@fam&am=100&cu=INR" class="btn">₹100</a>
         <a href="upi://pay?pa=7302017538@fam" class="btn">Custom</a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
-    <p>Have questions? We’d love to hear from you.</p>
+    <p>Have questions? Drop us a message!</p>
 
     <div class="contact-box">
       <div class="contact-item">
@@ -96,12 +96,16 @@
     <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" required>
+
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required>
+
       <label for="message">Message</label>
       <textarea name="message" id="message" rows="4" required></textarea>
+
       <input type="text" name="_gotcha" style="display:none">
       <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
+
       <button type="submit">Send</button>
     </form>
   </section>
@@ -120,20 +124,19 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
 
     // Back to Top Button
     const topBtn = document.getElementById("topBtn");
-    window.onscroll = function () {
+    window.onscroll = () => {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
     };
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+
 </body>
 </html>
