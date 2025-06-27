@@ -9,7 +9,6 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-  scroll-behavior: smooth;
 }
 
 .navbar {
@@ -42,11 +41,6 @@ body {
   background-color: #f2f2f2;
 }
 
-.main-header h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -72,6 +66,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* Gallery */
 .gallery {
   background-color: #f5f5f5;
   padding: 60px 20px;
@@ -90,6 +85,13 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item.clicked {
+  transform: scale(0.95);
 }
 
 .gallery-item img {
@@ -100,26 +102,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-.caption {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .caption {
-  opacity: 1;
-}
-
+/* Donate */
 .donate {
   background: #fff3e0;
   padding: 50px 20px;
@@ -155,6 +138,7 @@ body {
   border-radius: 8px;
 }
 
+/* Contact */
 .contact {
   background: #e3f2fd;
   text-align: center;
