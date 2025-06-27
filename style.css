@@ -6,25 +6,25 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  line-height: 1.6;
+  background-color: #ffffff;
   color: #333;
   scroll-behavior: smooth;
-  line-height: 1.6;
 }
 
+/* Dark Mode */
 body.dark-mode {
   background-color: #121212;
   color: #eee;
 }
-
 body.dark-mode .navbar, body.dark-mode footer {
   background-color: #333;
 }
-
 body.dark-mode a {
   color: #80d8ff;
 }
 
+/* Navbar */
 .navbar {
   background-color: #0d47a1;
   padding: 1rem;
@@ -58,6 +58,7 @@ body.dark-mode a {
   margin-left: 20px;
 }
 
+/* Header */
 .main-header {
   text-align: center;
   padding: 50px 20px;
@@ -75,6 +76,7 @@ body.dark-mode a {
   margin: auto;
 }
 
+/* Cards */
 .container {
   display: flex;
   justify-content: center;
@@ -90,7 +92,7 @@ body.dark-mode a {
   border-radius: 12px;
   text-align: center;
   background-color: #f9f9f9;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .card img {
@@ -137,6 +139,31 @@ body.dark-mode a {
 
 .gallery-grid img:hover {
   transform: scale(1.05);
+}
+
+/* Donate Section */
+.donate {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff3e0;
+}
+
+.donate h2 {
+  color: #d84315;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.donate p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.donate-qr {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 /* Contact */
@@ -221,30 +248,6 @@ body.dark-mode a {
   background: #08306b;
 }
 
-/* Donate */
-.donate {
-  background-color: #f2f2f2;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.donate h2 {
-  color: #0d47a1;
-  margin-bottom: 15px;
-}
-
-.donate p {
-  font-size: 16px;
-  margin-bottom: 25px;
-}
-
-.donate-qr {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 /* Footer */
 footer {
   background-color: #0d47a1;
@@ -254,7 +257,7 @@ footer {
   font-size: 14px;
 }
 
-/* Back to Top */
+/* Back to Top Button */
 #topBtn {
   position: fixed;
   bottom: 20px;
