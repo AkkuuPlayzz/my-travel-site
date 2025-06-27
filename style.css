@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,18 +11,6 @@ body {
   background-color: #ffffff;
   color: #333;
   scroll-behavior: smooth;
-}
-
-/* Dark Mode */
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-body.dark-mode .navbar, body.dark-mode footer {
-  background-color: #333;
-}
-body.dark-mode a {
-  color: #80d8ff;
 }
 
 /* Navbar */
@@ -47,15 +36,6 @@ body.dark-mode a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-#darkToggle {
-  background: transparent;
-  color: white;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-left: 20px;
 }
 
 /* Header */
@@ -143,21 +123,20 @@ body.dark-mode a {
 
 /* Donate Section */
 .donate {
-  background: #f9f9f9;
+  background: #fff3e0;
   padding: 50px 20px;
   text-align: center;
 }
 
 .donate h2 {
-  color: #0d47a1;
+  color: #d84315;
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .donate p {
   font-size: 16px;
-  margin-bottom: 25px;
-  color: #444;
+  margin-bottom: 20px;
 }
 
 .donate-box {
@@ -173,5 +152,138 @@ body.dark-mode a {
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
+.donate-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.donate-buttons button {
+  background: #0d47a1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.donate-buttons button:hover {
+  background: #08306b;
+}
+
+/* Contact */
+.contact {
+  background: #e3f2fd;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-item span {
+  font-size: 24px;
+}
+
+.contact-item h4 {
+  margin: 0 0 5px;
+  color: #0d47a1;
+}
+
+.contact-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background: #0d47a1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #08306b;
+}
+
+/* Footer */
+footer {
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+/* Back to Top Button */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover {
+  background: #08306b;
+}
