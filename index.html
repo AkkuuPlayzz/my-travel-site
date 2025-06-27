@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Travel Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -22,52 +22,47 @@
   <!-- Header -->
   <header class="main-header">
     <h1>📍 Places to Explore in the Hills</h1>
-    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
+    <p>Explore fruit villages, mountain peaks, and peaceful temples.</p>
   </header>
 
-  <!-- Places Section -->
+  <!-- Places -->
   <section id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
       <h3>Fruit Village</h3>
-      <p>Orchards filled with apples and peaches, hidden in the hills.</p>
+      <p>Apple and peach orchards in peaceful valleys.</p>
     </div>
     <div class="card">
       <img src="mountain.jpg" alt="Snowy Mountain" />
       <h3>Snowy Mountain</h3>
-      <p>Snow-covered peaks perfect for adventure and peace.</p>
+      <p>Snow-covered peaks with breathtaking views.</p>
     </div>
     <div class="card">
       <img src="temple.jpg" alt="Kedarnath Temple" />
       <h3>Kedarnath Temple</h3>
-      <p>A holy place nestled high in the Himalayas.</p>
+      <p>A sacred Himalayan temple with deep history.</p>
     </div>
   </section>
 
-  <!-- Gallery with Lightbox -->
+  <!-- Gallery -->
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Gallery Image 1" onclick="openLightbox(this.src)">
-      <img src="gallery2.jpg" alt="Gallery Image 2" onclick="openLightbox(this.src)">
-      <img src="gallery3.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
-      <img src="gallery4.jpg" alt="Gallery Image 4" onclick="openLightbox(this.src)">
-      <img src="gallery5.jpg" alt="Gallery Image 5" onclick="openLightbox(this.src)">
-      <img src="gallery6.jpg" alt="Gallery Image 6" onclick="openLightbox(this.src)">
+      <img src="gallery1.jpg" alt="Gallery 1">
+      <img src="gallery2.jpg" alt="Gallery 2">
+      <img src="gallery3.jpg" alt="Gallery 3">
+      <img src="gallery4.jpg" alt="Gallery 4">
+      <img src="gallery5.jpg" alt="Gallery 5">
+      <img src="gallery6.jpg" alt="Gallery 6">
     </div>
   </section>
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" src="">
-  </div>
-
-  <!-- Donate Section -->
+  <!-- Donate -->
   <section id="donate" class="donate">
     <h2>💖 Support the Developer</h2>
-    <p>Scan the QR or tap a button to donate any amount.</p>
+    <p>If you'd like to support, scan the QR or tap an amount:</p>
     <div class="donate-box">
-      <img src="donateQR.jpg" alt="Donate QR Code">
+      <img src="donateQR.jpg" alt="QR Code">
       <div class="donate-buttons">
         <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR" class="btn">₹10</a>
         <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR" class="btn">₹50</a>
@@ -77,9 +72,11 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
+    <p>Have questions? Drop us a message!</p>
+
     <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" required>
@@ -90,6 +87,7 @@
       <label for="message">Message</label>
       <textarea name="message" id="message" rows="4" required></textarea>
 
+      <input type="text" name="_gotcha" style="display:none">
       <button type="submit">Send</button>
     </form>
   </section>
@@ -98,18 +96,6 @@
   <footer>
     <p>© 2025 Akash Rawat | All rights reserved.</p>
   </footer>
-
-  <script>
-    function openLightbox(src) {
-      const lightbox = document.getElementById("lightbox");
-      const img = document.getElementById("lightbox-img");
-      img.src = src;
-      lightbox.style.display = "flex";
-    }
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
 
 </body>
 </html>
