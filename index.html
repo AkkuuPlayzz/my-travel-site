@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Travel Website</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -17,7 +17,6 @@
       <li><a href="#donate">Donate</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="darkToggle">🌙</button>
   </nav>
 
   <!-- Header -->
@@ -27,23 +26,23 @@
   </header>
 
   <!-- Places Section -->
-  <div id="places" class="container">
+  <section id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
       <h3>Fruit Village</h3>
-      <p>Tucked away in the Himalayan foothills, Fruit Village is surrounded by orchards bursting with apples, peaches, and plums...</p>
+      <p>Tucked away in the Himalayan foothills, Fruit Village is surrounded by orchards...</p>
     </div>
     <div class="card">
       <img src="mountain.jpg" alt="Snowy Mountain" />
       <h3>Snowy Mountain</h3>
-      <p>The snowy mountains stand tall and silent, covered in a white blanket for most of the year...</p>
+      <p>The snowy mountains stand tall and silent, covered in a white blanket...</p>
     </div>
     <div class="card">
       <img src="temple.jpg" alt="Kedarnath Temple" />
       <h3>Kedarnath Temple</h3>
-      <p>Sitting high in the Himalayas, Kedarnath Temple is one of the most sacred Hindu shrines...</p>
+      <p>Sitting high in the Himalayas, Kedarnath Temple is one of the most sacred shrines...</p>
     </div>
-  </div>
+  </section>
 
   <!-- Gallery Section -->
   <section id="gallery" class="gallery">
@@ -58,21 +57,24 @@
     </div>
   </section>
 
-<!-- Support the Developer Section -->
-<section class="donate">
-  <h2>💖 Support the Developer</h2>
-  <p>If you'd like to support the developer, you can donate any amount by scanning this QR code.</p>
-  <div class="donate-box">
-    <img src="donateQR.jpg" alt="Donate QR Code" />
-  </div>
-</section>
-
+  <!-- Donate Section -->
+  <section id="donate" class="donate">
+    <h2>💖 Support the Developer</h2>
+    <p>If you'd like to support the developer, scan the QR code below or use one of the quick options:</p>
+    <div class="donate-box">
+      <img src="donateQR.jpg" alt="Donate QR Code" />
+      <div class="donate-buttons">
+        <button>₹10</button>
+        <button>₹50</button>
+        <button>₹100</button>
+        <button>Custom</button>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
-    <p>Have questions? We’d love to hear from you.</p>
-
     <div class="contact-box">
       <div class="contact-item">
         <span>📱</span>
@@ -87,22 +89,6 @@
         <div><h4>WhatsApp</h4><a href="https://wa.me/917302017538" target="_blank">Message Us</a></div>
       </div>
     </div>
-
-    <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="4" required></textarea>
-
-      <input type="text" name="_gotcha" style="display:none">
-      <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
-
-      <button type="submit">Send</button>
-    </form>
   </section>
 
   <!-- Footer -->
@@ -110,14 +96,10 @@
     <p>© 2025 Akash Rawat | All rights reserved.</p>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+  <button onclick="topFunction()" id="topBtn">&#8679;</button>
 
-  <!-- Scripts -->
   <script>
-    const toggle = document.getElementById("darkToggle");
-    toggle.onclick = () => document.body.classList.toggle("dark-mode");
-
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -125,6 +107,7 @@
       });
     });
 
+    // Back to Top Button
     const topBtn = document.getElementById("topBtn");
     window.onscroll = function () {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -132,6 +115,15 @@
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // ScrollReveal Animations
+    ScrollReveal().reveal('.main-header, .card, .gallery img, .donate, .contact-box', {
+      delay: 200,
+      distance: '50px',
+      origin: 'bottom',
+      duration: 800,
+      interval: 100
+    });
   </script>
 </body>
 </html>
