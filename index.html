@@ -26,7 +26,7 @@
     <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to snowy peaks.</p>
   </header>
 
-  <!-- Places -->
+  <!-- Places Section -->
   <section id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
@@ -49,32 +49,20 @@
   <section id="gallery" class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery1.jpg" alt="Gallery 1">
-        <span class="ripple"></span>
-      </div>
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery2.jpg" alt="Gallery 2">
-        <span class="ripple"></span>
-      </div>
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery3.jpg" alt="Gallery 3">
-        <span class="ripple"></span>
-      </div>
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery4.jpg" alt="Gallery 4">
-        <span class="ripple"></span>
-      </div>
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery5.jpg" alt="Gallery 5">
-        <span class="ripple"></span>
-      </div>
-      <div class="gallery-item" onclick="imageClick(this)">
-        <img src="gallery6.jpg" alt="Gallery 6">
-        <span class="ripple"></span>
-      </div>
+      <img src="gallery1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
+      <img src="gallery2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
+      <img src="gallery3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
+      <img src="gallery4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
+      <img src="gallery5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
+      <img src="gallery6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">×</span>
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
 
   <!-- Donate -->
   <section id="donate" class="donate">
@@ -136,13 +124,9 @@
   <!-- Back to Top -->
   <button onclick="topFunction()" id="topBtn">↑</button>
 
-  <!-- Scripts -->
+  <!-- JS -->
   <script>
-    function imageClick(el) {
-      el.classList.add("clicked");
-      setTimeout(() => el.classList.remove("clicked"), 300);
-    }
-
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -150,12 +134,24 @@
       });
     });
 
+    // Back to Top
     const topBtn = document.getElementById("topBtn");
     window.onscroll = () => {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
     };
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Lightbox
+    function openLightbox(img) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
     }
   </script>
 </body>
