@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Travel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#places">Places</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Top Heading -->
+  <header class="main-header">
+    <h1>📍 Places to Explore in the Hills</h1>
+    <p>
+      Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and towering snowy peaks — every location has its own charm and story to tell.
+    </p>
+  </header>
+
+  <!-- Card Grid -->
+  <div id="places" class="container">
+    <div class="card">
+      <img src="images/fruit.png" alt="Fruit Village" />
+      <h3>Fruit Village</h3>
+      <p>
+        Tucked away in the Himalayan foothills, Fruit Village is surrounded by orchards bursting with apples, peaches, and plums...
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="images/mountain.jpg" alt="Snowy Mountain" />
+      <h3>Snowy Mountain</h3>
+      <p>
+        The snowy mountains stand tall and silent, covered in a white blanket for most of the year...
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="images/temple.jpg" alt="Kedarnath Temple" />
+      <h3>Kedarnath Temple</h3>
+      <p>
+        Sitting high in the Himalayas, Kedarnath Temple is one of the most sacred Hindu shrines...
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2>📞 Get in Touch</h2>
+    <p>Have questions? We’d love to hear from you.</p>
+
+    <div class="contact-box">
+      <div class="contact-item">
+        <span>📱</span>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:7302017538">+91 7302017538</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span>✉️</span>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:quotesmotivation409@gmail.com">quotesmotivation409@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span>💬</span>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/917302017538" target="_blank">Message Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form with Labels -->
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Akash Rawat | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+<form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" required>
+
+  <label for="message">Message</label>
+  <textarea name="message" id="message" rows="4" required></textarea>
+
+  <!-- Honeypot (spam bot trap) -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- Google reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+  <button type="submit">Send</button>
+</form>
+
+<!-- Load reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
