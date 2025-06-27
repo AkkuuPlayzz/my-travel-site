@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -22,16 +21,13 @@ body {
   top: 0;
   z-index: 1000;
 }
-
 .navbar ul {
   list-style: none;
 }
-
 .navbar li {
   display: inline;
   margin: 0 15px;
 }
-
 .navbar a {
   color: white;
   text-decoration: none;
@@ -44,12 +40,10 @@ body {
   padding: 50px 20px;
   background-color: #f2f2f2;
 }
-
 .main-header h1 {
   font-size: 36px;
   margin-bottom: 15px;
 }
-
 .main-header p {
   font-size: 18px;
   max-width: 700px;
@@ -64,7 +58,6 @@ body {
   padding: 30px 20px;
   gap: 30px;
 }
-
 .card {
   width: 300px;
   border: 1px solid #ccc;
@@ -74,7 +67,6 @@ body {
   background-color: #f9f9f9;
   transition: transform 0.4s ease;
 }
-
 .card img {
   width: 100%;
   height: 180px;
@@ -82,7 +74,6 @@ body {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
 .card:hover {
   transform: scale(1.03);
 }
@@ -93,13 +84,11 @@ body {
   padding: 60px 20px;
   text-align: center;
 }
-
 .gallery h2 {
   font-size: 30px;
   color: #0d47a1;
   margin-bottom: 30px;
 }
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -107,7 +96,6 @@ body {
   max-width: 1000px;
   margin: auto;
 }
-
 .gallery-grid img {
   width: 100%;
   height: 200px;
@@ -116,29 +104,25 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
-
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
 /* Donate Section */
 .donate {
-  background: #fff3e0;
+  background: #fff8e1;
   padding: 50px 20px;
   text-align: center;
 }
-
 .donate h2 {
   color: #d84315;
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
-
 .donate p {
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
-
 .donate-box {
   background: white;
   padding: 20px;
@@ -146,44 +130,32 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .donate-box img {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
 }
-
 .donate-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  margin-top: 15px;
 }
-
-.donate-buttons button {
+.donate-buttons .btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
   background: #0d47a1;
   color: white;
-  padding: 10px 15px;
-  border: none;
+  text-decoration: none;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s ease;
 }
 
-.donate-buttons button:hover {
-  background: #08306b;
-}
-
-/* Contact */
+/* Contact Section */
 .contact {
   background: #e3f2fd;
   text-align: center;
   padding: 50px 20px;
 }
-
 .contact-box {
   display: flex;
   justify-content: center;
@@ -191,33 +163,28 @@ body {
   gap: 30px;
   margin-bottom: 30px;
 }
-
 .contact-item {
   background: #fff;
   padding: 15px 20px;
   border-radius: 10px;
   width: 250px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: left;
   display: flex;
   gap: 15px;
+  text-align: left;
 }
-
 .contact-item span {
   font-size: 24px;
 }
-
 .contact-item h4 {
   margin: 0 0 5px;
   color: #0d47a1;
 }
-
 .contact-item a {
   color: #333;
   text-decoration: none;
   font-size: 15px;
 }
-
 .contact-form {
   max-width: 500px;
   margin: auto;
@@ -226,13 +193,11 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 .contact-form label {
   display: block;
   text-align: left;
   margin: 10px 0 5px;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -242,7 +207,6 @@ body {
   border-radius: 8px;
   font-size: 15px;
 }
-
 .contact-form button {
   width: 100%;
   padding: 10px;
@@ -252,9 +216,7 @@ body {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
-
 .contact-form button:hover {
   background: #08306b;
 }
@@ -268,7 +230,7 @@ footer {
   font-size: 14px;
 }
 
-/* Back to Top Button */
+/* Back to Top */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -281,9 +243,7 @@ footer {
   font-size: 20px;
   display: none;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
 #topBtn:hover {
   background: #08306b;
 }
