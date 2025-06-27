@@ -8,6 +8,7 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <ul>
@@ -18,15 +19,13 @@
     <button id="darkToggle">🌙</button>
   </nav>
 
-  <!-- Top Heading -->
+  <!-- Header -->
   <header class="main-header">
     <h1>📍 Places to Explore in the Hills</h1>
-    <p>
-      Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and towering snowy peaks — every location has its own charm and story to tell.
-    </p>
+    <p>Discover hidden gems in India’s mountains. From peaceful fruit villages to ancient temples and towering snowy peaks — every location has its own charm and story to tell.</p>
   </header>
 
-  <!-- Card Grid -->
+  <!-- Places Section -->
   <div id="places" class="container">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village" />
@@ -45,7 +44,7 @@
     </div>
   </div>
 
-  <!-- Gallery Section -->
+  <!-- Gallery -->
   <section class="gallery">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
@@ -58,10 +57,10 @@
     </div>
   </section>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top -->
   <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>📞 Get in Touch</h2>
     <p>Have questions? We’d love to hear from you.</p>
@@ -98,6 +97,13 @@
     </form>
   </section>
 
+  <!-- Support the Developer -->
+  <section class="donate">
+    <h2>💖 Support the Developer</h2>
+    <p>If you want to donate to the developer, scan the QR code below and pay any amount you'd like.</p>
+    <img src="donateQR.png" alt="Donate QR Code" class="donate-qr" />
+  </section>
+
   <!-- Footer -->
   <footer>
     <p>© 2025 Akash Rawat | All rights reserved.</p>
@@ -105,11 +111,9 @@
 
   <!-- Scripts -->
   <script>
-    // Dark Mode Toggle
     const toggle = document.getElementById("darkToggle");
     toggle.onclick = () => document.body.classList.toggle("dark-mode");
 
-    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -117,7 +121,6 @@
       });
     });
 
-    // Back to Top Button
     const topBtn = document.getElementById("topBtn");
     window.onscroll = function () {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -128,10 +131,3 @@
   </script>
 </body>
 </html>
-<!-- Support the Developer Section -->
-<section class="donate">
-  <h2>💖 Support the Developer</h2>
-  <p>If you want to donate to the developer, scan the QR code below and pay any amount you'd like.</p>
-  <img src="donateQR.png" alt="Donate QR Code" class="donate-qr" />
-</section>
-
