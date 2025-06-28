@@ -2,20 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Travel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Travel Website | Uttarakhand</title>
+  <meta name="description" content="Explore Uttarakhand: Fruit villages, temples, mountains & more. Contact, donate, chat.">
+  <meta name="keywords" content="Uttarakhand, travel, India, hills, gallery, contact">
+  <meta property="og:title" content="My Travel Website">
+  <meta property="og:description" content="Explore Uttarakhand: Fruit villages, temples, mountains & more.">
+  <meta property="og:image" content="fruit.png">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="stylesheet" href="style.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
   <!-- Scroll-to-Top Button -->
   <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
 
+  <!-- Floating WhatsApp Button -->
+  <button onclick="openWhatsApp()" id="whatsappBtn">WhatsApp</button>
+
   <!-- Logo Hero -->
   <div class="logo-hero">
-    <img src="https://images.unsplash.com/photo-1616576686355-dc87df3d1f33?auto=format&fit=crop&w=800&q=80" alt="Uttarakhand Logo">
-    <h1>Welcome to My Uttarakhand Website</h1>
+    <img src="favicon.jpg" alt="Logo">
+    <h1 class="auto-type">Welcome to Uttarakhand</h1>
   </div>
 
   <!-- Navbar -->
@@ -32,15 +46,15 @@
   <!-- Header -->
   <header class="main-header">
     <h2>📍 Places to Explore in the Hills</h2>
-    <p>Explore fruit villages, mountain peaks, and peaceful temples.</p>
+    <p>Explore fruit villages, temple peaks, and Himalayan views.</p>
   </header>
 
   <!-- Places Section -->
-  <section id="places" class="container">
+  <section id="places" class="container reveal">
     <div class="card">
       <img src="fruit.png" alt="Fruit Village">
       <h3>Fruit Village</h3>
-      <p>Apple and peach orchards in peaceful valleys.</p>
+      <p>Apple & peach orchards tucked in valleys.</p>
     </div>
     <div class="card">
       <img src="mountain.jpg" alt="Snowy Mountain">
@@ -50,12 +64,12 @@
     <div class="card">
       <img src="temple.jpg" alt="Kedarnath Temple">
       <h3>Kedarnath Temple</h3>
-      <p>A sacred Himalayan temple with deep history.</p>
+      <p>Historic temple set in Himalayan heights.</p>
     </div>
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
+  <section id="gallery" class="gallery reveal">
     <h2>📸 Photo Gallery</h2>
     <div class="gallery-grid">
       <img src="gallery1.jpg" alt="Gallery 1">
@@ -68,7 +82,7 @@
   </section>
 
   <!-- Donate Section -->
-  <section id="donate" class="donate">
+  <section id="donate" class="donate reveal">
     <h2>💖 Support the Developer</h2>
     <p>If you'd like to support, scan the QR or tap an amount:</p>
     <div class="donate-box">
@@ -83,9 +97,9 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact reveal">
     <h2>📞 Get in Touch</h2>
-    <p>Have questions? Reach out anytime.</p>
+    <p>Questions? Reach out anytime.</p>
     <div class="contact-box">
       <div class="contact-item">
         <span>📱</span>
@@ -100,14 +114,10 @@
         <div><h4>WhatsApp</h4><a href="https://wa.me/917302017538" target="_blank">Message Us</a></div>
       </div>
     </div>
-
     <form class="contact-form" action="https://formspree.io/f/xnnvlnjg" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="4" required></textarea>
+      <label for="name">Name</label><input type="text" id="name" name="name" required>
+      <label for="email">Email</label><input type="email" id="email" name="email" required>
+      <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
       <input type="text" name="_gotcha" style="display:none">
       <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
       <button type="submit">Send</button>
@@ -119,14 +129,76 @@
     <p>© 2025 Akash Rawat | All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    const scrollBtn = document.getElementById("scrollBtn");
-    window.onscroll = () => {
-      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // 1. Preloader
+  window.addEventListener("load", () => {
+    document.querySelector(".preloader").style.display = "none";
+    revealOnScroll(); // run after preloader
+  });
+
+  // 2. Scroll-to-top button
+  const topBtn = document.getElementById("scrollBtn");
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // 3. WhatsApp button
+  function openWhatsApp() {
+    window.open("https://wa.me/917302017538", "_blank");
+  }
+
+  // 4. Typing effect
+  const texts = [
+    "Welcome to Uttarakhand",
+    "Explore the Beauty of Hills",
+    "Your Adventure Starts Here"
+  ];
+  let idx = 0, char = 0;
+  function typeWriter() {
+    const el = document.querySelector(".auto-type");
+    if (!el) return;
+    if (char < texts[idx].length) {
+      el.textContent += texts[idx].charAt(char);
+      char++;
+      setTimeout(typeWriter, 100);
+    } else {
+      setTimeout(() => {
+        char = 0; idx = (idx + 1) % texts.length;
+        el.textContent = "";
+        typeWriter();
+      }, 1500);
     }
+  }
+  typeWriter();
+
+  // 5. Scroll reveal
+  function revealOnScroll() {
+    document.querySelectorAll(".reveal").forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 50) {
+        el.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", revealOnScroll);
+
+  // 6. Image popup
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.classList.add("lightbox-overlay");
+      const pop = document.createElement("img");
+      pop.src = img.src;
+      pop.classList.add("lightbox-img");
+      overlay.appendChild(pop);
+      overlay.addEventListener("click", () => document.body.removeChild(overlay));
+      document.body.appendChild(overlay);
+    });
+  });
   </script>
 
 </body>
